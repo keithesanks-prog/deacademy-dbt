@@ -4,24 +4,31 @@ models:
   - name: employee
     description: "Table of employees with split names and addresses"
     columns:
-      - name: emp_id  # This MUST match the alias in your .sql file
-        description: "Primary key"
+      - name: emp_id
         tests:
           - unique
           - not_null
           - accepted_values:
-              values: [1, 2, 3, 4, 5]  # Removed quotes to match INTEGER type
+              values: [1, 2, 3, 4, 5]
               config:
                 severity: warn
       - name: emp_salary
         tests: 
            - value_check
-
-
+  - name: customer
+    description: "DBT Model for the customer table"
+  - name: customer_vw
+    description: "DBT Model for the customer view"
 
 sources:
   - name: employee
     database: DBT_DB
     schema: PUBLIC
     tables:
-    - name: EMPLOYEE_RAW
+      - name: EMPLOYEE_RAW
+
+  - name: customer        # <--- ADD THIS SECTION
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: CUSTOMER_SRC
