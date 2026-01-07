@@ -23,6 +23,12 @@ models:
     description: "DBT Model for the sales table"
   - name: product
     description: "DBT Model for product table"
+  - name: purchase
+    description: "DBT Model for purchase table"
+  - name: orders
+    description: "DBT Model for orders table"
+  - name: final_orders
+    description: "DBT Model for final orders table"
 
 sources:
   - name: employee
@@ -48,3 +54,21 @@ sources:
     schema: PUBLIC
     tables:
       - name: PRODUCT_SRC
+    
+  - name: purchase
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: PURCHASE_SRC
+    
+  - name: orders
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: BASE_ORDERS
+
+  - name: patient
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: PATIENT_SRC
