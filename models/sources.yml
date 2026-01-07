@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: patient
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: PATIENT_SRC
