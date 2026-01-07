@@ -1,17 +1,3 @@
-country_code,country_name,continent
-US,United States,North America
-CA,Canada,North America
-BR,Brazil,South America
-FR,France,Europe
-CN,China,Asia
-IN,India,Asia
-NG,Nigeria,Africa
-AU,Australia,Oceania
-RU,Russia,Europe/Asia
-JP,Japan,Asia
-
-
-
 country_code,country_name,continent,currency
 US,United States,North America,USD
 CA,Canada,North America,CAD
