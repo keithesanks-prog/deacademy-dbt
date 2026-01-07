@@ -37,6 +37,17 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   my_new_project:
+    +database: DBT_DB_PROD
     # Applies to all files under models/example/
-    example:
+    demo:
       +materialized: table
+
+# ADD THIS FOR SEEDS
+seeds:
+  my_new_project:
+    +database: DBT_DB_PROD
+
+# ADD THIS FOR SNAPSHOTS
+snapshots:
+  my_new_project:
+    +database: DBT_DB_PROD
