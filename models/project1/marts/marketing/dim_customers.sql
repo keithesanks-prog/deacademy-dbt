@@ -1,4 +1,5 @@
 with customers as (
+    -- Use the ref function to point to your staging model
     select * from {{ ref('stg_jaffle_shop__customers') }}
 ),
 

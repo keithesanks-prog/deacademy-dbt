@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: stg_jaffle_shop__customers
+    columns:
+      - name: customer_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_jaffle_shop__orders
+    columns:
+      - name: order_id
+        data_tests:
+          - unique
+          - not_null
+      
+      - name: status   # The actual column name in your SQL
+        data_tests:
+          - not_null   # Example: ensuring every order has a status
+          - accepted_values:
+              values:
+                - completed
+                - shipped
+                - placed
+                - return_pending
+                - returned
+      - name: customer_id
+        data_tests:
+          - relationships:
+              field: customer_id
+              to: ref('stg_jaffle_shop__customers')
