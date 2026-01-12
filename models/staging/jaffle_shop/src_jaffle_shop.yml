@@ -7,18 +7,18 @@ sources:
     tables:
       - name: customers
         identifier: jaffle_shop_customers
-        description: The grain of this table is one unique customer per row
+        description: Raw customer data
         columns:
           - name: id
-            description: Primary key for the customers table
+            description: Primary key for the customer data
             data_tests:
               - unique
               - not_null
       - name: jaffle_shop_orders  # Use the full name from the sidebar
-        description: One order per row
+        description: Raw orders data
         columns:
           - name: id
-            description: Primary key for the orders table
+            description: Primary key for the order data
             data_tests:
              - unique
              - not_null
