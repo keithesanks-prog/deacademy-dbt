@@ -38,6 +38,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   deacademy_dbt:
     +database: DBT_DB_PROD
+    marts:
+      +materialized: table
     # Applies to all files under models/example/
     demo:
       +materialized: table
@@ -60,6 +62,8 @@ models:
     staging:
       +materialized: view
       +schema: staging
+    
+
 
 # ADD THIS FOR SEEDS
 seeds:
