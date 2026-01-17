@@ -2,7 +2,11 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
+<<<<<<< HEAD
 name: 'my_new_project'
+=======
+name: 'deacademy_dbt'
+>>>>>>> 185a219524f5737816f41f38fd859e238891ab6a
 version: '1.0.0'
 config-version: 2
 
@@ -36,7 +40,50 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
+<<<<<<< HEAD
   my_new_project:
     # Applies to all files under models/example/
     example:
       +materialized: table
+=======
+  deacademy_dbt:
+    +database: GLUEDB
+    marts:
+      +materialized: table
+    # Applies to all files under models/example/
+    demo:
+      +materialized: table
+    project1:
+      +database: PROJECT1_DB
+      bronze:
+        +schema: BRONZE
+      silver:
+        +schema: silver
+      marts:
+        +materialized: table
+        +schema: marts
+    project2:
+      +database: PROJECT2_DB
+      raw:
+        +schema: RAW
+      mart:
+        +materialized: table
+        +schema: MART
+    staging:
+      +materialized: view
+      +schema: staging
+    
+
+
+# ADD THIS FOR SEEDS
+seeds:
+  deacademy_dbt:
+    +database: RAW
+    +schema: jaffle_shop
+# ADD THIS FOR SNAPSHOTS
+snapshots:
+  deacademy_dbt:
+    +database: DBT_DB_PROD
+
+
+>>>>>>> 185a219524f5737816f41f38fd859e238891ab6a
