@@ -5,14 +5,30 @@
 <<<<<<< HEAD
 name: 'my_new_project'
 =======
+<<<<<<< HEAD
+name: 'my_new_project'
+=======
 name: 'deacademy_dbt'
 >>>>>>> 185a219524f5737816f41f38fd859e238891ab6a
+>>>>>>> e025dbe24f03d3f374d891327e18df0fee25e302
 version: '1.0.0'
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
 profile: 'default'
 
+<<<<<<< HEAD
+
+vars:
+
+   target_db: GLUEDB
+   target_schema: PUBLIC
+   stage_name: GLUEDB.PUBLIC.GLUE_S3_STAGE
+
+
+
+=======
+>>>>>>> e025dbe24f03d3f374d891327e18df0fee25e302
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
@@ -39,6 +55,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 # continue to be built as views. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 
+<<<<<<< HEAD
+# models:
+#   my_new_project:
+#     # Applies to all files under models/example/
+#     example:
+#       +materialized: table
+=======
 models:
 <<<<<<< HEAD
   my_new_project:
@@ -87,3 +110,4 @@ snapshots:
 
 
 >>>>>>> 185a219524f5737816f41f38fd859e238891ab6a
+>>>>>>> e025dbe24f03d3f374d891327e18df0fee25e302
