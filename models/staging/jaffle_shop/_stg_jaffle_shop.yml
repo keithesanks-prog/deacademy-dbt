@@ -22,7 +22,7 @@ models:
           - unique
           - not_null
       
-      - name: status   # The actual column name in your SQL
+      - name: order_status   # The actual column name in your SQL
         description: "{{ doc('order_status')}}"
         data_tests:
           - not_null   # Example: ensuring every order has a status
