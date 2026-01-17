@@ -10,7 +10,6 @@ config
 
 }}
 
- 
 
 WITH country_details_raw AS
 (
@@ -19,8 +18,6 @@ CURRENT_TIMESTAMP(6) AS INSERT_DTS
 FROM {{source('country','COUNTRY_DETAILS_CP')}} A,
 LATERAL FLATTEN (A.DATA) X
 )
-
- 
 
 SELECT
 CAST(SOURCE_DATA AS VARIANT) AS SOURCE_DATA,
