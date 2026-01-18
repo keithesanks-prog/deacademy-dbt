@@ -6,9 +6,9 @@ config-version: 2
 profile: 'default'
 
 vars:
-  target_db: GLUEDB
+  target_db: GLUEDB_PRODUCTION
   target_schema: PUBLIC
-  stage_name: GLUEDB.PUBLIC.GLUE_S3_STAGE
+  stage_name: GLUEDB_PRODUCTION.PUBLIC.GLUE_S3_STAGE
 
 # Directory configurations
 model-paths: ["models"]
@@ -24,40 +24,18 @@ clean-targets:
   - "dbt_packages"
 
 # Configuring models
+# Configuring models
 models:
   deacademy_dbt:
-    +database: GLUEDB
     staging:
       +materialized: view
-      +schema: staging
-    marts:
+
+    mart:
       +materialized: table
+
     demo:
       +materialized: table
-    
-    # Project specific configurations
-    project1:
-      +database: PROJECT1_DB
-      bronze:
-        +schema: BRONZE
-      silver:
-        +schema: silver
-      marts:
-        +materialized: table
-        +schema: marts
-    project2:
-      +database: PROJECT2_DB
-      raw:
-        +schema: RAW
-      mart:
-        +materialized: table
-        +schema: MART
 
-seeds:
-  deacademy_dbt:
-    +database: RAW
-    +schema: jaffle_shop
 
-snapshots:
-  deacademy_dbt:
-    +database: DBT_DB_PROD
+# Delete or comment out the 'project1' and 'project2' blocks entirely.
+# Also remove the +database: RAW from seeds and snapshots for now.
