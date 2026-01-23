@@ -32,10 +32,10 @@ models:
 
   deacademy_dbt:
       silver:
-          schema: silver
+          +schema: silver
           materialized: table
       gold:
-          schema: gold
+          +schema: gold
           materialized: view
 
  

@@ -6,3 +6,11 @@ sources:
     schema: PUBLIC
     tables:
       - name: PATIENT_SRC
+
+  - name: employee          # This matches the first part of {{ source('employee', ...) }}
+    database: DBT_DB        # Update if this lives in a different DB
+    schema: PUBLIC          # Update if this lives in a different schema
+    tables:
+      - name: EMPLOYEE_RAW  # This matches the second part of the source call
+        config:
+          loaded_at_field: updated_at # Moves the property to config to stop the warning
