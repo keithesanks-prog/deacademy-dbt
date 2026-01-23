@@ -28,8 +28,6 @@ clean-targets:
 models:
 
   deacademy_dbt:
-      demo:
-          schema: demo
       silver:
           schema: silver
           materialized: table
