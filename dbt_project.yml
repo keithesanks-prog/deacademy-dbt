@@ -26,16 +26,26 @@ clean-targets:
 # Configuring models
 # Configuring models
 models:
+
   deacademy_dbt:
-    staging:
-      +materialized: view
 
-    mart:
-      +materialized: table
+      demo:
 
-    demo:
-      +materialized: table
+          schema: demo
 
+     silver:
+
+          schema: silver
+
+          materialized: table
+
+      gold:
+
+          schema: gold
+
+          materialized: view
+
+ 
 
 # Delete or comment out the 'project1' and 'project2' blocks entirely.
 # Also remove the +database: RAW from seeds and snapshots for now.
