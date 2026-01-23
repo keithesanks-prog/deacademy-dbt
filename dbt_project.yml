@@ -5,10 +5,13 @@ config-version: 2
 # This setting configures which "profile" dbt uses for this project.
 profile: 'default'
 
+
 vars:
-  target_db: GLUEDB_PRODUCTION
-  target_schema: PUBLIC
-  stage_name: GLUEDB_PRODUCTION.PUBLIC.GLUE_S3_STAGE
+   wrk_schema: BRONZE
+   file_format_json: DEACADEMY_MYDB.BRONZE.MY_CSV_FORMAT
+   purge_status: FALSE
+   stage_name: DEACADEMY_MYDB.BRONZE.deacademy_s3_test_stage/
+   rawhist_db: DEACADEMY_MYDB
 
 # Directory configurations
 model-paths: ["models"]
