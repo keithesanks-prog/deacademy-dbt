@@ -14,3 +14,17 @@ sources:
       - name: EMPLOYEE_RAW  # This matches the second part of the source call
         config:
           loaded_at_field: updated_at # Moves the property to config to stop the warning
+
+  - name: source
+    database: DEACADEMY_MYDB  # Raw data lives here
+    schema: BRONZE
+    tables:
+      - name: WORK_PRODUCT_COPY
+
+  - name: stripe
+    database: raw
+    schema: stripe
+    tables:
+      - name: payment
+        config:
+          loaded_at_field: _BATCHED_AT

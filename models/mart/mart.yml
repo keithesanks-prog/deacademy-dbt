@@ -25,10 +25,10 @@ models:
             description: "The column contain continent of the country"
 
             tests:
-
+              
                 - accepted_values:
-
-                    values: ['Antarctica']
+                    arguments:
+                      values: ['Antarctica']
 
  
 
@@ -39,24 +39,16 @@ models:
       columns:
 
           - name: "(country_common_name||country_continent_name||country_currency_name)"
-
             description: "The primary key combination for this table"
-
             tests:
-
                 - unique
-
                 - not_null
-
           - name: country_continent_name
-
             description: "The column contain continent of the country"
-
             tests:
-
                 - accepted_values:
-
-                    values: ['North America']
+                    arguments:        # Nest 'values' inside 'arguments'
+                      values: ['North America']
 
  
 
@@ -83,8 +75,8 @@ models:
             tests:
 
                 - accepted_values:
-
-                    values: ['South America']
+                    arguments:
+                      values: ['South America']
 
  
 
@@ -111,8 +103,8 @@ models:
             tests:
 
                 - accepted_values:
-
-                    values: ['Europe']
+                    arguments:
+                      values: ['Europe']
 
  
 
@@ -139,8 +131,8 @@ models:
             tests:
 
                 - accepted_values:
-
-                    values: ['Africa']
+                    arguments:
+                      values: ['Africa']
 
  
 
@@ -167,8 +159,8 @@ models:
             tests:
 
                 - accepted_values:
-
-                    values: ['Asia']
+                   arguments:
+                     values: ['Asia']
 
  
 
@@ -195,5 +187,5 @@ models:
             tests:
 
                 - accepted_values:
-
+                   arguments:
                     values: ['Oceania']

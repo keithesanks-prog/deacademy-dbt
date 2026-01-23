@@ -31,12 +31,13 @@ clean-targets:
 models:
 
   deacademy_dbt:
+      database:  PC_DBT_DB
       silver:
           +schema: silver
-          materialized: table
+          +materialized: table
       gold:
           +schema: gold
-          materialized: view
+          +materialized: view
 
  
 
