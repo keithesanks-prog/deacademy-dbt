@@ -28,16 +28,16 @@ clean-targets:
 
 # Configuring models
 # Configuring models
+# Configuring models
 models:
-
   deacademy_dbt:
-      database:  PC_DBT_DB
-      silver:
-          +schema: silver
-          +materialized: table
-      gold:
-          +schema: gold
-          +materialized: view
+    +database: WALMART_PROJECT  # Add the + and update the DB name
+    staging:
+      +schema: public          # dbt will look at your raw data here
+      +materialized: view      # Staging is usually best as a view
+    marts:
+      +schema: analytics       # This is where your final tables will go
+      +materialized: table     # Final tables should be materialized for performance
 
  
 

@@ -1,30 +1,18 @@
 version: 2
 
 sources:
-  - name: patient
-    database: DBT_DB
+  # --- YOUR NEW WALMART PROJECT ---
+  - name: walmart_raw
+    database: WALMART_PROJECT
     schema: PUBLIC
     tables:
-      - name: PATIENT_SRC
+      - name: stg_department
+      - name: stg_stores
+      - name: stg_fact
 
-  - name: employee          # This matches the first part of {{ source('employee', ...) }}
-    database: DBT_DB        # Update if this lives in a different DB
-    schema: PUBLIC          # Update if this lives in a different schema
-    tables:
-      - name: EMPLOYEE_RAW  # This matches the second part of the source call
-        config:
-          loaded_at_field: updated_at # Moves the property to config to stop the warning
-
+  # --- OLD SOURCE NEEDED BY TRANSFORM_PRODUCT_LOAD ---
   - name: source
-    database: DEACADEMY_MYDB  # Raw data lives here
+    database: DEACADEMY_MYDB 
     schema: BRONZE
     tables:
       - name: WORK_PRODUCT_COPY
-
-  - name: stripe
-    database: raw
-    schema: stripe
-    tables:
-      - name: payment
-        config:
-          loaded_at_field: _BATCHED_AT
